@@ -16,7 +16,7 @@ Welcome to my homelab project! This repository documents my journey of turning a
 
 -Operating System: Debian 13 "Trixie" (Server)
 
-##  📖 Documentation & Guides
+## 📖 Documentation & Guides
 
 This project is documented in a series of step-by-step guides. Each document covers a specific part of the setup and configuration process.
 
@@ -26,6 +26,9 @@ This project is documented in a series of step-by-step guides. Each document cov
 2. [Web Management Dashboard with Cockpit](./docs/02-Web-Dashboard.md)
    Details the installation and configuration of the Cockpit web interface for server monitoring and management.
 
+3. [Setting up Secondary HDD Drive](./docs/03-Secondary-Drive.md)
+   Process of formatting and permanently mounting a secondary hard drive on the server.
+
 (More documents will be linked here as I progress)
 
 Core Technologies
@@ -34,7 +37,5 @@ OS: Debian Server
 Web Dashboard: Cockpit
 
 Firewall: UFW (Uncomplicated Firewall)
-
-Containerization: (Coming Soon: Docker & Docker Compose)
 
 Version Control: Git & GitHub
