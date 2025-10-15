@@ -68,3 +68,30 @@ Restarted the service to apply the new configuration:
 ```bash
 sudo systemctl restart systemd-logind.service
 ```
+
+
+```bash
+akshat@debian:~$ fastfetch
+        _,met$$$$$gg.          akshat@debian
+     ,g$$$$$$$$$$$$$$$P.       -------------
+   ,g$$P""       """Y$$.".     OS: Debian GNU/Linux 13 (trixie) x86_64
+  ,$$P'              `$$$.     Host: HP 15 Notebook PC 
+',$$P       ,ggs.     `$$b:    Kernel: Linux 6.12.48+deb13-amd64
+`d$$'     ,$P"'   .    $$$     Uptime: 7 hours, 58 mins
+ $$P      d$'     ,    $$P     Packages: 530 (dpkg)
+ $$:      $$.   -    ,d$$'     Shell: bash 5.2.37
+ $$;      Y$b._   _,d$P'       Display (CMN15AB): 1366x768 @ 60 Hz in 16" [Built-in]
+ Y$$.    `.`"Y$$$$P"'          Terminal: /dev/pts/0
+ `$$b      "-.__               CPU: Intel(R) Pentium(R) N3530 (4) @ 2.58 GHz
+  `Y$$b                        GPU: Intel Atom Processor Z36xxx/Z37xxx Series Graphics & Display @ 0.90 GHz [Integrated]
+   `Y$$.                       Memory: 533.40 MiB / 3.72 GiB (14%)
+     `$$b.                     Swap: 0 B / 976.00 MiB (0%)
+       `Y$$b.                  Disk (/): 1.26 GiB / 16.59 GiB (8%) - ext4
+         `"Y$b._               Disk (/mnt/data): 2.12 MiB / 457.38 GiB (0%) - ext4
+             `""""             Disk (/srv): 25.87 MiB / 209.27 GiB (0%) - ext4
+                               Disk (/var): 371.12 MiB / 6.61 GiB (5%) - ext4
+                               Local IP (wlp2s0f0): 192.xxx.xx.xxx/24
+                               Locale: en_IN
+
+                                                       
+```
