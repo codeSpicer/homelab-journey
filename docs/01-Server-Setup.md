@@ -2,9 +2,9 @@
 
 This document covers the initial setup of my homelab server on an older HP Pentium laptop, from choosing an OS to basic security hardening.
 
-## 1. Operating System: Debian 12
+## 1. Operating System: Debian 13
 
-I initially attempted to install Fedora Server, but encountered persistent boot freezes on the laptop's hardware. After troubleshooting with various kernel parameters (inst.text, nomodeset, acpi=off) failed to resolve the issue, I switched to Debian 12 "Bookworm".
+I initially attempted to install Fedora Server, but encountered persistent boot freezes on the laptop's hardware. After troubleshooting with various kernel parameters (inst.text, nomodeset, acpi=off) failed to resolve the issue, I switched to Debian 13 "Trixie".
 
 Conclusion: Debian proved to have excellent hardware compatibility, and the text-based net installer worked flawlessly. This was a key lesson in choosing the right tool for the job.
 

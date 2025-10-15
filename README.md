@@ -29,6 +29,9 @@ This project is documented in a series of step-by-step guides. Each document cov
 3. [Setting up Secondary HDD Drive](./docs/03-Secondary-Drive.md)
    Process of formatting and permanently mounting a secondary hard drive on the server.
 
+4. [Setting up a NAS with Samba](./docs/04-NAS-Server-Samba.md)
+   Setup of Network Attached Storage (NAS) shares on the server
+
 (More documents will be linked here as I progress)
 
 Core Technologies
