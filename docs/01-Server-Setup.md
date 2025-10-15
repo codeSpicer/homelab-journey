@@ -2,21 +2,22 @@
 
 This document covers the initial setup of my homelab server on an older HP Pentium laptop, from choosing an OS to basic security hardening.
 
-1. Operating System: Debian 12
+## 1. Operating System: Debian 12
 
 I initially attempted to install Fedora Server, but encountered persistent boot freezes on the laptop's hardware. After troubleshooting with various kernel parameters (inst.text, nomodeset, acpi=off) failed to resolve the issue, I switched to Debian 12 "Bookworm".
 
 Conclusion: Debian proved to have excellent hardware compatibility, and the text-based net installer worked flawlessly. This was a key lesson in choosing the right tool for the job.
 
-##Installation Choices:
+## Installation Choices:
 
 A minimal "headless" server was created by selecting only two software options:
 -SSH server
 -standard system utilities
 
-2. Remote Access via SSH
-   -After installation, the first step was to enable remote management.
-   -Logged into the server directly to find its local IP address:
+## 2. Remote Access via SSH
+
+-After installation, the first step was to enable remote management.
+-Logged into the server directly to find its local IP address:
 
 ```bash
 ip a
@@ -28,7 +29,7 @@ From my main PC, I established an SSH connection (replacing akshat and the IP ad
 ssh akshat@192.168.29.162
 ```
 
-3. User Management & Security
+## 3. User Management & Security
 
 Proper user management is critical for a secure system.
 
@@ -46,7 +47,7 @@ To prevent direct login attempts to the powerful root account, I locked its pass
 sudo passwd -l root
 ```
 
-4. Laptop-to-Server Configuration
+## 4. Laptop-to-Server Configuration
 
 To make the laptop behave like a server, I prevented it from suspending when the lid is closed.
 

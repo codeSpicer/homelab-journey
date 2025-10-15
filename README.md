@@ -16,7 +16,7 @@ Welcome to my homelab project! This repository documents my journey of turning a
 
 -Operating System: Debian 13 "Trixie" (Server)
 
-## 📖 Documentation & Guides
+##  📖 Documentation & Guides
 
 This project is documented in a series of step-by-step guides. Each document covers a specific part of the setup and configuration process.
 
