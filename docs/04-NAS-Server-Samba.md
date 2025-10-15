@@ -23,84 +23,84 @@ sudo apt install samba
 
 Samba's behavior is controlled by /etc/samba/smb.conf. We can define as many shares as we need.
 
-    1. Create Directories: First, ensure the directories to be shared exist and have the correct permissions.
-    ```bash
-    # Directory for the large HDD share (already done in Guide 3)
-    sudo mkdir /mnt/data
-    sudo chown akshat:akshat /mnt/data
+1. Create Directories: First, ensure the directories to be shared exist and have the correct permissions.
+```bash
+# Directory for the large HDD share (already done in Guide 3)
+sudo mkdir /mnt/data
+sudo chown akshat:akshat /mnt/data
 
-    # Directory for the fast SSD share
-    sudo mkdir /srv/ssd-share
-    sudo chown akshat:akshat /srv/ssd-share
-    ```
+# Directory for the fast SSD share
+sudo mkdir /srv/ssd-share
+sudo chown akshat:akshat /srv/ssd-share
+```
 
-    2. Edit the Samba Config File:
-    ```bash
-    sudo nano /etc/samba/smb.conf
-    ```
+2. Edit the Samba Config File:
+```bash
+sudo nano /etc/samba/smb.conf
+```
 
-    3. Add Share Blocks: Add the following configuration blocks to the end of the file.
+3. Add Share Blocks: Add the following configuration blocks to the end of the file.
 
-    ```bash
-    # Share for the large HDD
-    [Data]
-    comment = Server Data Drive
-    path = /mnt/data
-    writable = yes
-    guest ok = no
-    read only = no
-    create mask = 0775
-    directory mask = 0775
-    valid users = akshat
+```bash
+# Share for the large HDD
+[Data]
+comment = Server Data Drive
+path = /mnt/data
+writable = yes
+guest ok = no
+read only = no
+create mask = 0775
+directory mask = 0775
+valid users = akshat
 
-    # Share for the fast SSD
-    [SSD-Share]
-    comment = Fast SSD Storage
-    path = /srv/ssd-share
-    writable = yes
-    guest ok = no
-    read only = no
-    create mask = 0775
-    directory mask = 0775
-    valid users = akshat
-    ```
+# Share for the fast SSD
+[SSD-Share]
+comment = Fast SSD Storage
+path = /srv/ssd-share
+writable = yes
+guest ok = no
+read only = no
+create mask = 0775
+directory mask = 0775
+valid users = akshat
+```
 
-    3. Disabling Default Home Directory Sharing
+3. Disabling Default Home Directory Sharing
 
-    By default, Samba automatically shares a user's home directory. To keep the setup clean and only show our intended shares, this feature was disabled.
+By default, Samba automatically shares a user's home directory. To keep the setup clean and only show our intended shares, this feature was disabled.
 
-    In `/etc/samba/smb.conf`, locate the [homes] section.
+In `/etc/samba/smb.conf`, locate the [homes] section.
 
-    Comment out the entire section by placing a semicolon (`;`) at the beginning of each line.
+Comment out the entire section by placing a semicolon (`;`) at the beginning of each line.
 
-    ```bash
-    ;[homes]
-    ; comment = Home Directories
-    ; ...
-    ```
+```bash
+;[homes]
+; comment = Home Directories
+; ...
+```
 
-    4. User and Password Setup
+4. User and Password Setup
 
-    Samba uses its own password management. A Samba password must be created for any user who needs access. (This only needs to be done once per user).
+Samba uses its own password management. A Samba password must be created for any user who needs access. (This only needs to be done once per user).
 
-    Created a Samba password for my user `akshat`:
+Created a Samba password for my user `akshat`:
 
-    ```bash
-    sudo smbpasswd -a akshat
-    ```
+```bash
+sudo smbpasswd -a akshat
+```
 
-    5. Service Restart and Firewall
+5. Service Restart and Firewall
 
-    To apply all configuration changes, the Samba service must be restarted.
+To apply all configuration changes, the Samba service must be restarted.
 
-    ```bash
-    sudo systemctl restart smbd
-    ```
+```bash
+sudo systemctl restart smbd
+```
 
-    Additionally, the Uncomplicated Firewall (UFW) needs to allow Samba traffic. (This only needs to be done once).
+Additionally, the Uncomplicated Firewall (UFW) needs to allow Samba traffic. (This only needs to be done once).
 
-    ```bash
-    sudo ufw allow 'Samba'
-    ```
+```bash
+sudo ufw allow 'Samba'
+```
 
-    After these steps, both the "Data" and "SSD-Share" folders are accessible from other computers on the local network.
+After these steps, both the "Data" and "SSD-Share" folders are accessible from other computers on the local network.
