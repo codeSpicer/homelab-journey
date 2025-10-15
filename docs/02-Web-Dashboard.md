@@ -49,3 +49,5 @@ URL: `https://<your-server-ip>:9090` (e.g., https://192.168.29.162:9090)
 Login: Use the same username and password as your Debian user (akshat).
 
 A browser security warning about a "self-signed certificate" is expected and safe to bypass on a local network.
+
+<img width="1470" height="827" alt="image" src="https://github.com/user-attachments/assets/28eabd71-849c-4209-9225-7e13650bea3d" />
