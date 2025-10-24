@@ -27,31 +27,31 @@ sudo cloudflared service install eyJhIjoi......CJ9
 
 I discovered there are two types of tunnels, which caused some confusion.
 
-- 1. Named Tunnels (Dashboard Method): This is the "official" method using the Cloudflare Zero Trust dashboard.
+1. Named Tunnels (Dashboard Method): This is the "official" method using the Cloudflare Zero Trust dashboard.
 
-  - Problem: When I tried to create a public hostname in the dashboard, the "Domain" dropdown was empty.
+- Problem: When I tried to create a public hostname in the dashboard, the "Domain" dropdown was empty.
 
-  - Reason: This method requires you to own a custom domain (e.g., my-domain.com) and have it added to your Cloudflare account. I don't have one yet.
+- Reason: This method requires you to own a custom domain (e.g., my-domain.com) and have it added to your Cloudflare account. I don't have one yet.
 
-- 2. Quick Tunnels (CLI Method): This is a simpler, account-less method run directly from the terminal.
+2. Quick Tunnels (CLI Method): This is a simpler, account-less method run directly from the terminal.
 
-  - Command: `cloudflared tunnel --url https://localhost:9090 --no-tls-verify
+- Command: `cloudflared tunnel --url https://localhost:9090 --no-tls-verify
 
-  - Result: This worked perfectly and instantly gave me a public URL (e.g., `https://random-words.trycloudflare.com`).
+- Result: This worked perfectly and instantly gave me a public URL (e.g., `https://random-words.trycloudflare.com`).
 
-  - Problem: This tunnel is temporary. It stops as soon as I close the SSH session.
+- Problem: This tunnel is temporary. It stops as soon as I close the SSH session.
 
-- 4. The Solution: A Permanent "Quick Tunnel" Service
+## 4. The Solution: A Permanent "Quick Tunnel" Service
 
 The best workaround is to take the "Quick Tunnel" command and turn it into a permanent service using systemd, so it starts automatically on boot.
 
-    - Create a systemd service file:
+- Create a systemd service file:
 
 ```bash
 sudo nano /etc/systemd/system/cloudflared-cockpit.service
 ```
 
-    - Add Service Configuration:
+- Add Service Configuration:
 
 I added the following configuration. The ExecStart line contains the command we tested, and User=akshat ensures it runs as my user, not as root.
 
@@ -59,23 +59,18 @@ I added the following configuration. The ExecStart line contains the command we 
 [Unit]
 Description=Cloudflare Quick Tunnel for Cockpit
 After=network.target
-
 [Service]
 User=akshat
-
 # The --no-tls-verify flag is critical for Cockpit,
-
 # which uses a self-signed certificate.
-
 ExecStart=/usr/bin/cloudflared tunnel --url https://localhost:9090 --no-tls-verify
 Restart=on-failure
 RestartSec=5s
-
 [Install]
 WantedBy=multi-user.target
 ```
 
-    - Enable and Start the Service:
+- Enable and Start the Service:
 
 ```bash
 # Reload systemd to read the new file
