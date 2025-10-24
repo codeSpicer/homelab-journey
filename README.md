@@ -32,6 +32,9 @@ This project is documented in a series of step-by-step guides. Each document cov
 4. [Setting up a NAS with Samba](./docs/04-NAS-Server-Samba.md)
    Setup of Network Attached Storage (NAS) shares on the server
 
+5. [Remote Access with Cloudflare Tunnels](./docs/05-Cloudflare-Tunnels.md)
+    This guide covers setting up secure remote access to my server.
+
 (More documents will be linked here as I progress)
 
 Core Technologies
