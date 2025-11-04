@@ -35,6 +35,9 @@ This project is documented in a series of step-by-step guides. Each document cov
 5. [Remote Access with Cloudflare Tunnels](./docs/05-Cloudflare-Tunnels.md)
     This guide covers setting up secure remote access to my server.
 
+6. [Cloudflare ZeroTrust Setup and Domain](./docs/06_Cloudflare-Zerotrust-Setup.md)
+   This is the central guide for my homelab's remote access.
+
 (More documents will be linked here as I progress)
 
 Core Technologies
