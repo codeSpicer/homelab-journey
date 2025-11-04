@@ -1,4 +1,4 @@
-# Guide 8: The Master Guide to Cloudflare Zero Trust
+# Guide 6: The Master Guide to Cloudflare Zero Trust
 
 This is the central guide for my homelab's remote access. It details the complete, end-to-end process of using a custom domain (`codespicer.win`) and Cloudflare Tunnels to create a hybrid setup:
 
