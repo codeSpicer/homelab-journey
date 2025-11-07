@@ -16,6 +16,12 @@ Welcome to my homelab project! This repository documents my journey of turning a
 
 -Operating System: Debian 13 "Trixie" (Server)
 
+- Domain: codespicer.win (managed by Cloudflare)
+
+- Containerization: Docker & Docker Compose
+
+- Monitoring: Uptime Kuma
+
 ## 📖 Documentation & Guides
 
 This project is documented in a series of step-by-step guides. Each document covers a specific part of the setup and configuration process.
@@ -33,10 +39,13 @@ This project is documented in a series of step-by-step guides. Each document cov
    Setup of Network Attached Storage (NAS) shares on the server
 
 5. [Remote Access with Cloudflare Tunnels](./docs/05-Cloudflare-Tunnels.md)
-    This guide covers setting up secure remote access to my server.
+   This guide covers setting up secure remote access to my server.
 
 6. [Cloudflare ZeroTrust Setup and Domain](./docs/06_Cloudflare-Zerotrust-Setup.md)
    This is the central guide for my homelab's remote access.
+
+7. [Docker & Uptime Kuma setup](./docs/07_Docker_&_UptimeKuma_Setup.md)
+   Our first containerized service.
 
 (More documents will be linked here as I progress)
 
