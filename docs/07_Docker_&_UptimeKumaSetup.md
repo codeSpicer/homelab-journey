@@ -2,6 +2,9 @@
 
 This guide details the process of getting started with Docker on the Debian server. The first project is deploying Uptime Kuma, a powerful monitoring dashboard, as our first containerized service.
 
+<img width="1469" height="917" alt="image" src="https://github.com/user-attachments/assets/0e94f061-7929-49b8-9502-a320b19c205c" />
+
+
 ## 1. Docker Installation:
 
 For the installation I have followed the official documentation of the docker. [Link to official docs.](https://docs.docker.com/engine/install/debian/#install-using-the-repository)
